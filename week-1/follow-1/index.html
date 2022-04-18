@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>A First App</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <label for="goal">Goal</label>
+                <!-- v model establishes a connection between vue and the input value -->
+                <input type="text" id="goal" v-model="enteredValue" />
+                <!-- vue event listener, on click, trigger function in method -->
+                <button v-on:click="addGoal">Add Goal</button>
+            </div>
+            <ul>
+                <!-- Loop through our goals array to post here  -->
+                <li v-for="goal in goals">{{goal}}</li>
+            </ul>
+        </div>
+        <!-- Vue must be above own script  -->
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
